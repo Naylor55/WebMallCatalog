@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,8 +30,11 @@ namespace WebMallCatalog.Controllers
 
             //--model
             var data = from item in db.Goods select item;
-            var model = data;
+            var model = data;            
+
             return View(model);
+
+
         }
         public ActionResult GoodsType()
         {
@@ -41,11 +45,17 @@ namespace WebMallCatalog.Controllers
             return View();
         }
 
+        public ActionResult JQAjaxRequest()
+        {
+            return View();
+        }
+
         public ActionResult GetViewData()
         {
             return View();
         }
 
+        [HttpPost]
         public string SendViewData(int Id, string Name)
         {
             return "后台已经获取到了前台传递过来的数据，编号：" + Id + "-------名称：" + Name;
@@ -57,12 +67,21 @@ namespace WebMallCatalog.Controllers
             JsonResult json = new JsonResult();
             if (Request.Form.Count > 0)
             {
-                int id = Convert.ToInt32(Request.Form["Id"]);
-                string name = Request.Form["Name"];
+                int id = Convert.ToInt32(Request["Id"]);
+                string name = Request["Name"];
                 json.Data = new { result = "后台已经接受到了前台的JQAjax请求。Id=" + id + "-----name=" + name };
             }
             return json;
         }
 
+        [HttpGet]
+        public string SendForJQAjaxGetRequest(int Id, string Name)
+        {
+            //JsonResult json = new JsonResult();
+            //json.Data = new { result = "Id=" + Id + "-----name=" + Name };
+            //return json;
+            string result = "Id=" + Id + "-----name=" + Name;
+            return result;
+        }
     }
 }

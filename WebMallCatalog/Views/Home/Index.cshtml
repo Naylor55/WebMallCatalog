@@ -8,6 +8,12 @@
 <h4>控制器向视图传递数据方式：ViewBag;ViewData;Model。这是常见和常用的三种.NET  MVC提供的方式，viewbag一般适用于较少数据量用于标识某项指标功能的数据传递，如传递一个用户信息或者一个编号之类的，数据类型为对象类型；viewdata一般适用于KEY-VALUE形式数据的传递，数据类型为字典；一般情况下在 .NET MVC的项目中Model是用的最多的，常用于将需要循环遍历的数据传递给视图。三种方式中的每一种功能都很强大，具体在什么情况下怎么用无固定的标准，根据官方建议和团队编码习惯而定，详细的功能使用不作赘述，见微软    官方文档</h4>
 
 <br />
+
+<h3>
+    ViewData：只会在一次HTTP请求中有效，当这次请求结束后，就会自动清空其值，ViewData的生命周期和所请求的View是一样的，仅对当前View有效。
+</h3>
+
+<br />
 <h3>方式一：Viewbag</h3>
 <p>当前登录用户用户名为： @ViewBag.datauser</p>
 <br />
@@ -36,13 +42,13 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-        {
+            {
             <tr>
                 <td>@item.g_ID</td>
                 <td>@item.g_Name</td>
                 <td>@item.g_ProduceDate</td>
                 <td>@item.g_Description</td>
-            </tr>            
+            </tr>
         }
     </tbody>
 </table>

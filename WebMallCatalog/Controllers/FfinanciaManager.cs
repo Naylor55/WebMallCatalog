@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebMallCatalog.Controllers
 {
-    public class FfinanciaManagerlController : Controller
+    public class FfinanciaManagerController : Controller
     {
         // GET: Order
         public ActionResult Budget()

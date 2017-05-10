@@ -6,9 +6,11 @@
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 <script>
     function SearchGoodsBegin() {
+        debugger
         alert("表单提交之前触发的事件SearchGoodsBegin");
     }
     function SearchGoodsSuccess(data) {
+        debugger
         alert(data);
     }
 </script>
@@ -20,8 +22,7 @@
 
 @using (Ajax.BeginForm("SendViewData", "Home", new AjaxOptions
 {
-    HttpMethod = "Get",
-    UpdateTargetId = "data",
+    HttpMethod = "Post",
     OnBegin = "SearchGoodsBegin",
     OnSuccess = "SearchGoodsSuccess"
 }, new { @class = "searchForm", id = "searchForm", @role = "form" }))
@@ -31,4 +32,5 @@
     <span> 名称：</span>
     <input type="text" name="Name" value="" />
     <input type="submit" value="提交" />
+  
 }

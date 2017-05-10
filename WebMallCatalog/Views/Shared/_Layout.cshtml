@@ -7,8 +7,8 @@
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
 
     @Styles.Render("~/Content/css")
-    
-    
+
+
     @Scripts.Render("~/bundles/modernizr")
 
 
@@ -27,8 +27,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "GetViewData", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Ajax.BeginForm方式请求后台", "GetViewData", "Home")</li>
+                    <li>@Html.ActionLink("JQ方式请求后台", "JQAjaxRequest", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

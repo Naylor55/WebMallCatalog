@@ -200,9 +200,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OrderData.cs" />
+    <Compile Include="Controllers\OrderDataController.cs" />
     <Compile Include="Controllers\SystemManagerController.cs" />
-    <Compile Include="Controllers\FfinanciaManagerl.cs" />
+    <Compile Include="Controllers\FfinanciaManager.cs" />
     <Compile Include="Controllers\GoodsController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,7 +261,7 @@
     <Content Include="Controllers\等等.txt" />
     <Content Include="Ddownload\文件下载.txt" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\EFModel\Model1.Context.tt">
@@ -274,9 +274,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\PublicModel\公共实体.txt" />
+    <Content Include="Models\CommonModel\公共实体.txt" />
     <Content Include="Plugin\插件.txt" />
-    <Content Include="PublicClass\公共类.txt" />
+    <Content Include="UtilityClass\公共类.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -320,9 +320,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
-    <Content Include="Views\FfinanciaManagerl\Budget.cshtml" />
-    <Content Include="Views\FfinanciaManagerl\OrderStatement.cshtml" />
-    <Content Include="Views\FfinanciaManagerl\BackPayment.cshtml" />
+    <Content Include="Views\FfinanciaManager\Budget.cshtml" />
+    <Content Include="Views\FfinanciaManager\OrderStatement.cshtml" />
+    <Content Include="Views\FfinanciaManager\BackPayment.cshtml" />
     <Content Include="Views\Goods\GoodsList.cshtml" />
     <Content Include="Views\Goods\GoodsDetail.cshtml" />
     <Content Include="Views\Goods\VipCounter.cshtml" />
@@ -340,6 +340,7 @@
     <Content Include="Views\Order\Gift.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\GetViewData.cshtml" />
+    <Content Include="Views\Home\JQAjaxRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -349,11 +350,10 @@
     <Folder Include="Scripts\CommonScripts\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>

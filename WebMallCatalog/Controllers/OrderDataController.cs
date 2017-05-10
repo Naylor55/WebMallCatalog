@@ -1,4 +1,8 @@
-﻿using System;
+﻿
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +15,7 @@ namespace WebMallCatalog.Controllers
     /// Order相关的数据操作Comtroller
     /// 适用于功能模块中包含较多的视图和DataAction
     /// </summary>
-    public class OrderData : Controller
+    public class OrderDataController : Controller
     {
         public string GetOrderJsonStrData()
         {

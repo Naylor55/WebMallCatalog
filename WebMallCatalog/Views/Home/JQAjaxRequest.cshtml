@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "JQAjaxRequest";
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    // POST
+    //需要发送的数据
+    function sendData() {
+        var Id = $(".id").val();
+        var Name = $(".name").val();
+        var data = { Id: Id, Name: Name }
+        return data
+    }
+    //发送请求
+    function postdata() {
+        var senddata = sendData()
+        $.ajax({
+            url: '/Home/SendForJQAjaxRequest',
+            type: 'post',
+            dataType: 'json',
+            data: senddata,
+            success: function (data, textStatus) {  //成功后返回的数据跟方法
+                $(".box").html(data.result);
+                console.log(data);
+            },
+            error: function (XML, textStatus) {    // 失败  判断状态给出方法
+                if (XML.status == 404) {
+                    alert("此时弹出404页面")
+                } else if (XML.status == 500) {
+                    alert("请填写信息")
+                }
+            },
+        })
+    }
+
+
+    //GET
+    //需要发送的数据
+    function gsendData() {
+        var Id = $(".gid").val();
+        var Name = $(".gname").val();
+        var data = { Id: Id, Name: Name }
+        return data
+    }
+    //发送请求
+    function getdata() {
+        var gsenddata = gsendData()
+        $.ajax({
+            url: '/Home/SendForJQAjaxGetRequest',
+            type: 'get',
+            data: gsenddata,
+            success: function (data) {  //成功后返回的数据跟方法
+                alert(data);
+                $(".gbox").html(data);
+            },
+            error: function (XML, textStatus) {    // 失败  判断状态给出方法
+                if (XML.status == 404) {
+                    alert("此时弹出404页面")
+                } else if (XML.status == 500) {
+                    alert("请填写信息")
+                }
+            },
+        })
+    }
+
+
+
+
+</script>
+
+<h2>JQAjaxPostRequest</h2>
+<p>myId <input type="text" class="id"></p>
+<p>name<input type="text" class="name"></p>
+<p><button class="btn" onclick="postdata()">点击执行post请求</button></p>
+<div class="box">
+</div>
+
+
+
+<h2>JQAjaxGetRequest</h2>
+<p>myId <input type="text" class="gid"></p>
+<p>name<input type="text" class="gname"></p>
+<p><button class="btn" onclick="getdata()">点击执行get请求</button></p>
+<div class="gbox">
+</div>
+
